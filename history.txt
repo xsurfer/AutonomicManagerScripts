@@ -1,0 +1,10 @@
+***History***
+
+
+8 Ago 17:12	- Nuovi script. Per preparare l'ambiente, da un nodo locale, preparare il file node_ips mettendo un MASTER e uno SLAVE (come da esempio). 			Dopodiché basta configurare
+
+7 Ago 11:50	- Aggiornato Autonomic Manager+Future Grid Actuator. Prima run
+
+ 		- RadarGun aggiunte primitive di sync
+6 Ago 19:45	- Prima versione
+
