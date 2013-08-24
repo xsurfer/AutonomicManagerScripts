@@ -31,7 +31,7 @@
             />
     <!-- If no IP-multicast is available, use TCPGOSSIP instead of MPING -->
     <TCPGOSSIP
-            initial_hosts="${jgroups.gossip_bind_addr:149.165.148.242[15800]}"
+            initial_hosts="${jgroups.gossip_bind_addr:vm-148-105.uc.futuregrid.org[15800]}"
             num_initial_members="3"
             break_on_coord_rsp="true"
             />

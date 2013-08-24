@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-set -x
+set +x
 
 ROOT=$(dirname ${0})
 
@@ -33,6 +33,10 @@ echo "This is the MASTER!" > ${TMP_MASTER}/MASTER_README.MD
 echo "Copying Repository..."
 cp ${CUR_DIR}/repository ${TMP_MASTER}/. -R
 
+echo "Copying node_ips file..."
+rm -rf ${TMP_MASTER}/repository/Controller/config/node_ips
+cp ${CUR_DIR}/node_ips ${TMP_MASTER}/repository/Controller/config/. -R
+
 echo "Copying Master Scripts && Files..."
 mkdir -p ${TMP_MASTER}/scripts
 cp ${CUR_DIR}/scripts/master/* ${TMP_MASTER}/scripts/. -R
@@ -45,14 +49,14 @@ ln -s ./scripts/stop.sh ${TMP_MASTER}/stop.sh
 ln -s ./scripts/setup.sh ${TMP_MASTER}/setup.sh
 
 echo "Compressing the dir..."
-#tar -czf ${TMP_DIR}/AutonomicManager.tar.gz -C ${TMP_DIR} ${MASTER_DIR}
+tar -czf ${TMP_DIR}/AutonomicManager.tar.gz -C ${TMP_DIR} ${MASTER_DIR}
 
 echo "Deleting any previous version..."
-#ssh -o StrictHostKeyChecking=no ${USER}@${MASTER} "rm -rf ${MASTER_INSTALL_DIR}/AutonomicManager.tar.gz"
-#ssh -o StrictHostKeyChecking=no ${USER}@${MASTER} "rm -rf ${MASTER_ROOT_DIR}"
+ssh -o StrictHostKeyChecking=no ${USER}@${MASTER} "rm -rf ${MASTER_INSTALL_DIR}/AutonomicManager.tar.gz"
+ssh -o StrictHostKeyChecking=no ${USER}@${MASTER} "rm -rf ${MASTER_ROOT_DIR}"
 
 echo "Copying to the master..."
-#scp -o StrictHostKeyChecking=no ${TMP_DIR}/AutonomicManager.tar.gz ${USER}@${MASTER}:${MASTER_INSTALL_DIR}/.
+scp -o StrictHostKeyChecking=no ${TMP_DIR}/AutonomicManager.tar.gz ${USER}@${MASTER}:${MASTER_INSTALL_DIR}/.
 
 echo "Extracting remote file..."
 ssh -o StrictHostKeyChecking=no ${USER}@${MASTER} "tar xzf ${MASTER_INSTALL_DIR}/AutonomicManager.tar.gz -C ${MASTER_INSTALL_DIR}"

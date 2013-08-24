@@ -5,20 +5,23 @@ set +x
 
 source ./env.sh
 
+echo "Copying key from master ${MASTER} locally"
+scp -o StrictHostKeyChecking=no ${USER}@${MASTER}:.ssh/id_rsa.pub masterPublicKey
+
 for SLAVE in "${SLAVES[@]}"
 do
 
-	echo Copying key from machine ${SLAVE} locally
-	scp -o StrictHostKeyChecking=no root@${SLAVE}:.ssh/id_rsa.pub keyToCopy
+	echo "Copying key from slave ${SLAVE} locally"; 
+	scp -o StrictHostKeyChecking=no ${USER}@${SLAVE}:.ssh/id_rsa.pub slavePublicKey; 
 
-#	echo "Copying from master (${MASTER}) to slave (${SLAVE})"
-#	ssh -o StrictHostKeyChecking=no root@${MASTER} "ssh-copy-id -o StrictHostKeyChecking=no root@${SLAVE}"	
-
-#	echo "Copying from slave (${SLAVE}) to master (${MASTER})"
-#	ssh -o StrictHostKeyChecking=no root@${SLAVE} "ssh-copy-id -o StrictHostKeyChecking=no root@${MASTER}"
-
-	echo Adding ${SLAVE} to authorized_hosts on ${MASTER}
-	cat keyToCopy | ssh -o StrictHostKeyChecking=no root@${MASTER} cat - ">>" .ssh/authorized_keys
-
+	echo "Adding slave [${SLAVE}] to authorized_hosts on master [${MASTER}]"; 
+	cat slavePublicKey | ssh -o StrictHostKeyChecking=no root@${MASTER} cat - ">>" .ssh/authorized_keys; 
+	ssh -o StrictHostKeyChecking=no ${USER}@${MASTER} "chmod 700 ~/.ssh/id_rsa"; 
 	
+	echo "Adding master [${MASTER}] to authorized_hosts on slave [${SLAVE}]";
+	cat masterPublicKey | ssh -o StrictHostKeyChecking=no root@${SLAVE} cat - ">>" .ssh/authorized_keys;
+  ssh -o StrictHostKeyChecking=no ${USER}@${SLAVE} "chmod 700 ~/.ssh/id_rsa";
+ 	
 done
+
+
