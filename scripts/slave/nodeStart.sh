@@ -69,7 +69,7 @@ pushd ${SLAVE_INSTANCE_DIR}
   echo "--- Copying config and bin dirs for RADARGUN ---"
   cp -R ${RADARGUN_BIN_SOURCE} ${RADARGUN_DIR}/bin
   cp -R ${RADARGUN_CONF_SOURCE} ${RADARGUN_DIR}/conf 
-  cp -R ${RADARGUN_PLUGINS_SOURCE} ${RADARGUN_DIR}/plugins
+  cp -R ${RADARGUN_PLUGINS_SOURCE} ${RADARGUN_DIR}/.
   
   pushd ${RADARGUN_DIR}/plugins/infinispan4/conf/jgroups
     echo "* Changing GossipRouter address to ${MASTER}"
