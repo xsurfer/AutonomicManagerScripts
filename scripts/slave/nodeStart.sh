@@ -23,6 +23,7 @@ WPM_CONF_SOURCE=${SLAVE_INSTANCE_DIR}/configs/wpm/config
 RADARGUN_DIR=${SLAVE_INSTANCE_DIR}/RadarGun-1.1.0-SNAPSHOT
 RADARGUN_CONF_SOURCE=${SLAVE_INSTANCE_DIR}/configs/radargun/conf
 RADARGUN_BIN_SOURCE=${SLAVE_INSTANCE_DIR}/configs/radargun/bin
+RADARGUN_PLUGINS_SOURCE=${SLAVE_INSTANCE_DIR}/configs/radargun/plugins
 
 # OTHERS
 PRODUCER_HOSTNAME=`hostname`
@@ -67,7 +68,15 @@ pushd ${SLAVE_INSTANCE_DIR}
   # RADARGUN
   echo "--- Copying config and bin dirs for RADARGUN ---"
   cp -R ${RADARGUN_BIN_SOURCE} ${RADARGUN_DIR}/bin
-  cp -R ${RADARGUN_CONF_SOURCE} ${RADARGUN_DIR}/conf
+  cp -R ${RADARGUN_CONF_SOURCE} ${RADARGUN_DIR}/conf 
+  cp -R ${RADARGUN_PLUGINS_SOURCE} ${RADARGUN_DIR}/plugins
+  
+  pushd ${RADARGUN_DIR}/plugins/infinispan4/conf/jgroups
+    echo "* Changing GossipRouter address to ${MASTER}"
+    sed -i 's/%GOSSIP_ADDRESS%/'${MASTER}'/g' jgroups-tcp_cloudtm.xml
+  popd
+
+
 
   echo "--- Starting Radargun Slave ---" 
   pushd ${RADARGUN_DIR}

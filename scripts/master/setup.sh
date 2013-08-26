@@ -26,9 +26,17 @@ echo "Copying Radargun..."
 cp ${ROOT}/repository/RadarGun-1.1.0-SNAPSHOT ${MASTER_ROOT_DIR}/. -R
 cp ${MASTER_ROOT_DIR}/repository/configs/radargun/conf ${MASTER_ROOT_DIR}/RadarGun-1.1.0-SNAPSHOT/. -R
 cp ${MASTER_ROOT_DIR}/repository/configs/radargun/bin ${MASTER_ROOT_DIR}/RadarGun-1.1.0-SNAPSHOT/. -R
+cp ${MASTER_ROOT_DIR}/repository/configs/radargun/plugins ${MASTER_ROOT_DIR}/RadarGun-1.1.0-SNAPSHOT/. -R
+
+pushd ${MASTER_ROOT_DIR}/RadarGun-1.1.0-SNAPSHOT/plugins/infinispan4/conf/jgroups
+  echo "* Changing GossipRouter address to ${MASTER}"
+  sed -i 's/%GOSSIP_ADDRESS%/'${MASTER}'/g' jgroups-tcp_cloudtm.xml
+popd
+
 
 echo "Copying Controller..."
 cp ${MASTER_ROOT_DIR}/repository/Controller ${MASTER_ROOT_DIR}/. -R
+
 
 echo "Creating tar file for VMs..."
 pushd ${MASTER_ROOT_DIR}/repository
