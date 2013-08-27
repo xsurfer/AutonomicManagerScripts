@@ -73,7 +73,7 @@ done
 
 
 echo "Deleting temp the dir..."
-#rm -rf ${TMP_MASTER}
+#rm -rf ${TMP_SLAVE}
 #rm -rf ${TMP_DIR}/AutonomicManager.tar.gz
 
 echo ""
