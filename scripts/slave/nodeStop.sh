@@ -15,18 +15,18 @@ WPM_CONSUMER_PID=`ps -ef | grep "eu.cloudtm.wpm.main.Main consumer" | grep -v "g
 WPM_CONTROLLER_PID=`ps -ef | grep "eu.cloudtm.wpm.main.Main producer" | grep -v "grep" | awk '{print $2}'`
 
 
-if [ -z "${RADARGUN_SLAVE_PID}" ]
-then
-  echo "Slave not running." 
-else
-  kill -15 ${RADARGUN_SLAVE_PID}
-  if [ $? ]
-  then 
-    echo "Successfully stopped Slave (pid=${RADARGUN_SLAVE_PID})"
-  else 
-    echo "Problems stopping Slave(pid=${RADARGUN_SLAVE_PID})";
-  fi  
-fi
+#if [ -z "${RADARGUN_SLAVE_PID}" ]
+#then
+#  echo "Slave not running." 
+#else
+#  kill -15 ${RADARGUN_SLAVE_PID}
+#  if [ $? ]
+#  then 
+#    echo "Successfully stopped Slave (pid=${RADARGUN_SLAVE_PID})"
+#  else 
+#    echo "Problems stopping Slave(pid=${RADARGUN_SLAVE_PID})";
+#  fi  
+#fi
 
 if [ -z "${WPM_CONSUMER_PID}" ]
 then
