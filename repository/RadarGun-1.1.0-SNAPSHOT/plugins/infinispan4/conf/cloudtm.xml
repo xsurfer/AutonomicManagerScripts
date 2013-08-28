@@ -17,7 +17,7 @@
     </global>
     <default>
         <locking
-                isolationLevel="REPEATABLE_READ"
+                isolationLevel="SERIALIZABLE"
                 concurrencyLevel="32"
                 writeSkewCheck="false"
                 useLockStriping="false"
@@ -61,12 +61,12 @@
         </customInterceptors>
         <versioning
                 enabled="true"
-                versioningScheme="SIMPLE" />
+                versioningScheme="GMU" />
     </default>
     <namedCache
             name="x">
         <locking
-                isolationLevel="REPEATABLE_READ"
+                isolationLevel="SERIALIZABLE"
                 concurrencyLevel="32"
                 writeSkewCheck="false"
                 useLockStriping="false"
@@ -110,7 +110,7 @@
         </customInterceptors>
         <versioning
                 enabled="true"
-                versioningScheme="SIMPLE" />
+                versioningScheme="GMU" />
         <dataPlacement
                 enabled="true"
                 objectLookupFactory="org.infinispan.dataplacement.hm.HashMapObjectLookupFactory"
