@@ -92,7 +92,7 @@
     </category>
 
     <category name="org.infinispan">
-        <priority value="OFF"/>
+        <priority value="FATAL"/>
     </category>
 
     <category name="org.radargun.cachewrappers.InfinispanWrapper">

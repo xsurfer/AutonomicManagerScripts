@@ -59,7 +59,7 @@
                 updateXactWrites="10"
                 updateXactReads="10"
                 readOnlyXactSize="10"
-                writePercentage="10"
+                writePercentage="50"
                 allowBlindWrites="false"
                 retryOnAbort="RETRY_SAME_CLASS"
                 statsSamplingInterval="15000"
@@ -104,7 +104,7 @@
 
     <products>
         <infinispan4>
-            <config name="cloudtmGMU.xml"/>
+            <config name="cloudtmRR.xml"/>
         </infinispan4>
     </products>
     <reports>
