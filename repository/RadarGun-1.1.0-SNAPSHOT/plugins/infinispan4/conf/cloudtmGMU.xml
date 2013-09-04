@@ -46,7 +46,7 @@
             <sync
                     replTimeout="15000" />
             <hash
-                    numOwners="1"/>
+                    numOwners="10"/>
             <l1
                     enabled="false"
                     onRehash="false"
@@ -62,6 +62,12 @@
         <versioning
                 enabled="true"
                 versioningScheme="GMU" />
+	<garbageCollector
+                enabled="true"
+                transactionThreshold="1000"
+                versionGCMaxIdle="60"
+                viewGCBackOff="120"
+                l1GCInterval="60"/>
     </default>
     <namedCache
             name="x">
@@ -95,7 +101,7 @@
             <sync
                     replTimeout="15000" />
             <hash
-                    numOwners="1"/>
+                    numOwners="10"/>
             <l1
                     enabled="false"
                     onRehash="false"
@@ -138,6 +144,12 @@
                         />
             </properties>
         </dataPlacement>
+	<garbageCollector
+                enabled="true"
+                transactionThreshold="1000"
+                versionGCMaxIdle="60"
+                viewGCBackOff="120"
+                l1GCInterval="60"/>
     </namedCache>
 
 </infinispan>

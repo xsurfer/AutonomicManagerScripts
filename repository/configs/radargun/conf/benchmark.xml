@@ -22,11 +22,11 @@
                 delayAfterFirstSlaveStarts="5000"
                 delayBetweenStartingSlaves="1000"
                 skippable="false"/>
-        <ClusterValidation
+        <!-- <ClusterValidation
                 id="c"
                 passiveReplication="false"
                 partialReplication="false"
-                skippable="true"/>
+                skippable="true"/ -->
 
         <SyntheticWarmup
                 id="d"

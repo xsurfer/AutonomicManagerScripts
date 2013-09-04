@@ -23,3 +23,9 @@ JPROFILER_CFG_ID=103
 JMX_MASTER_PORT="9999"
 JMX_SLAVES_PORT="9998"
 
+#use concurrent mark and sweep GC for Old generation and Parallel GC for Young generations
+JVM_OPTS="$JVM_OPTS -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:+UseParNewGC"
+
+#changes the old/young ratio and the surviors space ratio
+JVM_OPTS="$JVM_OPTS -XX:NewRatio=2 -XX:SurvivorRatio=8 -XX:TargetSurvivorRatio=90 -XX:TargetSurvivorRatio=70"
+JVM_OPTS="$JVM_OPTS -XX:+UseStringCache -XX:+UseCompressedStrings -XX:+OptimizeStringConcat -XX:+UseBiasedLocking"
