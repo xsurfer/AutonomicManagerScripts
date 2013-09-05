@@ -95,6 +95,10 @@
         <priority value="FATAL"/>
     </category>
 
+    <category name="org.infinispan.interceptors.InvocationContextInterceptor">
+        <priority value="TRACE" />
+    </category>
+
     <category name="org.radargun.cachewrappers.InfinispanWrapper">
         <priority value="WARN"/>
     </category>
