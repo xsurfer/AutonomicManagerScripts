@@ -69,11 +69,11 @@
     </category>
 
     <category name="org.radargun.stages.stressors.producer">
-        <priority value="OFF"/>
+        <priority value="TRACE"/>
     </category>
 
     <category name="org.radargun.stages.stressors.consumer">
-        <priority value="OFF"/>
+        <priority value="TRACE"/>
     </category>
 
     <category name="org.radargun.portings.tpcc">

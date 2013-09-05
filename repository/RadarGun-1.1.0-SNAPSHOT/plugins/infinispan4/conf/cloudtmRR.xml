@@ -39,7 +39,7 @@
         </transaction>
         <jmxStatistics
                 enabled="true"/>
-        <customStats sampleServiceTimes="true"/>
+<!-- cloudtm stuff        <customStats sampleServiceTimes="true"/> -->
         <deadlockDetection
                 enabled="false"/>
         <clustering mode="d">
@@ -54,11 +54,14 @@
                     invalidationThreshold="0" />
             <stateTransfer fetchInMemoryState="true"/>
         </clustering>
-        <customInterceptors>
+
+<!-- cloudtm stuff        <customInterceptors>
             <interceptor
                     after="org.infinispan.interceptors.InvocationContextInterceptor"
                     class="org.infinispan.distribution.wrappers.CustomStatsInterceptor"/>
         </customInterceptors>
+-->
+
         <versioning
                 enabled="true"
                 versioningScheme="SIMPLE" />
@@ -111,7 +114,7 @@
         <versioning
                 enabled="true"
                 versioningScheme="SIMPLE" />
-        <dataPlacement
+ <!-- cloudtm stuff       <dataPlacement
                 enabled="true"
                 objectLookupFactory="org.infinispan.dataplacement.hm.HashMapObjectLookupFactory"
                 maxNumberOfKeysToRequest="1000">
@@ -138,6 +141,7 @@
                         />
             </properties>
         </dataPlacement>
+-->
     </namedCache>
 
 </infinispan>
