@@ -10,7 +10,7 @@ echo ""
 echo "--- LAUNCHING SCRIPTS ---"
 
 echo "Starting GossipRouter"
-java -cp ${MASTER_ROOT_DIR}/RadarGun-1.1.0-SNAPSHOT/plugins/infinispan4/lib/jgroups-3.3.0.CR2.jar org.jgroups.stack.GossipRouter -port 15800 -bindaddress ${MASTER} &
+java -cp ${MASTER_ROOT_DIR}/RadarGun-1.1.0-SNAPSHOT/plugins/infinispan4/lib/jgroups-3.4.0.Alpha1.jar org.jgroups.stack.GossipRouter -port 15800 -bindaddress ${MASTER} &
 
 sleep 5
 

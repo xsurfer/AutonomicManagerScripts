@@ -54,11 +54,11 @@
                     invalidationThreshold="0" />
             <stateTransfer fetchInMemoryState="true"/>
         </clustering>
-<!--        <customInterceptors>
+        <customInterceptors>
             <interceptor
                     after="org.infinispan.interceptors.InvocationContextInterceptor"
-                    class="org.infinispan.distribution.wrappers.CustomStatsInterceptor"/>
-        </customInterceptors> -->
+                    class="org.infinispan.stats.wrappers.ExtendedStatisticInterceptor"/>
+        </customInterceptors>
         <versioning
                 enabled="true"
                 versioningScheme="NONE" />
@@ -103,11 +103,11 @@
                     invalidationThreshold="0" />
             <stateTransfer fetchInMemoryState="true"/>
         </clustering>
-<!--        <customInterceptors>
+        <customInterceptors>
             <interceptor
                     after="org.infinispan.interceptors.InvocationContextInterceptor"
-                    class="org.infinispan.distribution.wrappers.CustomStatsInterceptor"/>
-        </customInterceptors> -->
+                    class="org.infinispan.stats.wrappers.ExtendedStatisticInterceptor"/>
+        </customInterceptors>
         <versioning
                 enabled="true"
                 versioningScheme="NONE" />
