@@ -39,7 +39,7 @@
         </transaction>
         <jmxStatistics
                 enabled="true"/>
-        <customStats sampleServiceTimes="true"/>
+<!--        <customStats sampleServiceTimes="true"/> -->
         <deadlockDetection
                 enabled="false"/>
         <clustering mode="d">
@@ -54,14 +54,14 @@
                     invalidationThreshold="0" />
             <stateTransfer fetchInMemoryState="true"/>
         </clustering>
-        <customInterceptors>
+<!--        <customInterceptors>
             <interceptor
                     after="org.infinispan.interceptors.InvocationContextInterceptor"
                     class="org.infinispan.distribution.wrappers.CustomStatsInterceptor"/>
-        </customInterceptors>
+        </customInterceptors> -->
         <versioning
                 enabled="true"
-                versioningScheme="SIMPLE" />
+                versioningScheme="NONE" />
     </default>
     <namedCache
             name="x">
@@ -88,7 +88,7 @@
         </transaction>
         <jmxStatistics
                 enabled="true"/>
-        <customStats sampleServiceTimes="true"/>
+<!--        <customStats sampleServiceTimes="true"/> -->
         <deadlockDetection
                 enabled="false"/>
         <clustering mode="d">
@@ -103,15 +103,15 @@
                     invalidationThreshold="0" />
             <stateTransfer fetchInMemoryState="true"/>
         </clustering>
-        <customInterceptors>
+<!--        <customInterceptors>
             <interceptor
                     after="org.infinispan.interceptors.InvocationContextInterceptor"
                     class="org.infinispan.distribution.wrappers.CustomStatsInterceptor"/>
-        </customInterceptors>
+        </customInterceptors> -->
         <versioning
                 enabled="true"
-                versioningScheme="SIMPLE" />
-        <dataPlacement
+                versioningScheme="NONE" />
+<!--        <dataPlacement
                 enabled="true"
                 objectLookupFactory="org.infinispan.dataplacement.hm.HashMapObjectLookupFactory"
                 maxNumberOfKeysToRequest="1000">
@@ -137,7 +137,7 @@
                         value="10000"
                         />
             </properties>
-        </dataPlacement>
+        </dataPlacement>   -->
     </namedCache>
 
 </infinispan>

@@ -1,6 +1,6 @@
 <infinispan
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="urn:infinispan:config:5.2 http://www.infinispan.org/schemas/infinispan-config-5.2.xsd"
+        xsi:schemaLocation="urn:infinispan:config:6.0 http://www.infinispan.org/schemas/infinispan-config-6.0.xsd"
         xmlns="urn:infinispan:config:5.2">
     <global>
         <globalJmxStatistics
@@ -39,7 +39,7 @@
         </transaction>
         <jmxStatistics
                 enabled="true"/>
-        <customStats sampleServiceTimes="true"/>
+<!--        <customStats sampleServiceTimes="true"/> -->
         <deadlockDetection
                 enabled="false"/>
         <clustering mode="d">
@@ -61,7 +61,7 @@
         </customInterceptors>
         <versioning
                 enabled="true"
-                versioningScheme="GMU" />
+                versioningScheme="NONE" />
     </default>
     <namedCache
             name="x">
@@ -88,7 +88,7 @@
         </transaction>
         <jmxStatistics
                 enabled="true"/>
-        <customStats sampleServiceTimes="true"/>
+<!--        <customStats sampleServiceTimes="true"/> -->
         <deadlockDetection
                 enabled="false"/>
         <clustering mode="d">
@@ -110,8 +110,8 @@
         </customInterceptors>
         <versioning
                 enabled="true"
-                versioningScheme="GMU" />
-        <dataPlacement
+                versioningScheme="NONE" />
+<!--        <dataPlacement
                 enabled="true"
                 objectLookupFactory="org.infinispan.dataplacement.hm.HashMapObjectLookupFactory"
                 maxNumberOfKeysToRequest="1000">
@@ -137,7 +137,7 @@
                         value="10000"
                         />
             </properties>
-        </dataPlacement>
+        </dataPlacement>  -->
     </namedCache>
 
 </infinispan>
