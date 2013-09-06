@@ -92,7 +92,7 @@
     </category>
 
     <category name="org.infinispan">
-        <priority value="FATAL"/>
+        <priority value="WARN"/>
     </category>
 
     <category name="org.infinispan.interceptors.InvocationContextInterceptor">

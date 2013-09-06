@@ -57,7 +57,7 @@
         <customInterceptors>
             <interceptor
                     after="org.infinispan.interceptors.InvocationContextInterceptor"
-                    class="org.infinispan.stats.wrappers.ExtendedStatisticInterceptorsasasasas"/>
+                    class="org.infinispan.stats.wrappers.ExtendedStatisticInterceptor"/>
         </customInterceptors>
         <versioning
                 enabled="true"
@@ -106,7 +106,7 @@
         <customInterceptors>
             <interceptor
                     after="org.infinispan.interceptors.InvocationContextInterceptor"
-                    class="org.infinispan.stats.wrappers.ExtendedStatisticInterceptorsasasasasa"/>
+                    class="org.infinispan.stats.wrappers.ExtendedStatisticInterceptor"/>
         </customInterceptors>
         <versioning
                 enabled="true"
