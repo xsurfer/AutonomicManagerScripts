@@ -52,7 +52,7 @@
                     onRehash="false"
                     lifespan="600000"
                     invalidationThreshold="0" />
-            <stateTransfer fetchInMemoryState="true"/>
+            <stateTransfer fetchInMemoryState="true" timeout="2400000"/>
         </clustering>
         <customInterceptors>
             <interceptor
@@ -101,7 +101,7 @@
                     onRehash="false"
                     lifespan="600000"
                     invalidationThreshold="0" />
-            <stateTransfer fetchInMemoryState="true"/>
+            <stateTransfer fetchInMemoryState="true" timeout="2400000" />
         </clustering>
         <customInterceptors>
             <interceptor

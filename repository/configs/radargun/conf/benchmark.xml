@@ -8,8 +8,8 @@
          skippable stages and executing the other ones.
          If dynamic is false, it'll ignore slaves trying to join at runtime -->
     <benchmark
-            initSize="1"
-            maxSize="1"
+            initSize="15"
+            maxSize="15"
             increment="1">
 
         <!--runOnAllSlaves="true"-->
@@ -18,6 +18,7 @@
                 skippable="true"/>
         <StartCluster
                 id="b"
+		performCLusterSizeValidation="false"
                 staggerSlaveStartup="false"
                 delayAfterFirstSlaveStarts="5000"
                 delayBetweenStartingSlaves="1000"
@@ -59,7 +60,7 @@
                 updateXactWrites="10"
                 updateXactReads="10"
                 readOnlyXactSize="10"
-                writePercentage="50"
+                writePercentage="10"
                 allowBlindWrites="false"
                 retryOnAbort="RETRY_SAME_CLASS"
                 statsSamplingInterval="15000"
