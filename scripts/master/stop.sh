@@ -1,10 +1,13 @@
 #!/bin/bash
 
+ROOT=$(dirname ${0})
+source ${ROOT}/env.sh
+
 echo ""
 echo "--- STOPPING PREVIOUS PROCESSES ---"
 
 RADARGUN_MASTER_PID=`ps -ef | grep "org.radargun.LaunchMaster" | grep -v "grep" | awk '{print $2}'`
-LOG_SERVICE_PID=`ps -ef | grep "eu.cloudtm.wpm.main.Main logService" | grep -v "grep" | awk '{print $2}'`
+#LOG_SERVICE_PID=`ps -ef | grep "eu.cloudtm.wpm.main.Main logService" | grep -v "grep" | awk '{print $2}'`
 GOSSIP_ROUTER_PID=`ps -ef | grep "org.jgroups.stack.GossipRouter" | grep -v "grep" | awk '{print $2}'`
 
 
@@ -21,18 +24,10 @@ else
   fi  
 fi
 
-if [ -z "${LOG_SERVICE_PID}" ]
-then
-  echo "LogService not running." 
-else
-  kill -15 ${LOG_SERVICE_PID}
-  if [ $? ]
-  then
-    echo "Successfully stopped LogService (pid=${LOG_SERVICE_PID})"
-  else
-    echo "Problems stopping LogService (pid=${LOG_SERVICE_PID})";
-  fi
-fi
+echo "Stopping LogService"
+pushd ${MASTER_ROOT_DIR}/monitor/wpm
+  bash ./log_service.sh stop
+popd
 
 if [ -z "${GOSSIP_ROUTER_PID}" ]
 then
