@@ -61,7 +61,7 @@ pushd ${SLAVE_INSTANCE_DIR}
 
   echo "--- Starting Producer && Consumer ---"
   pushd ${WPM_DIR}
-    ./run_cons_prod.sh 2>&1 > /dev/null &
+    ./run_cons_prod.sh start
   popd
 
 

@@ -16,7 +16,7 @@ sleep 5
 
 echo "Starting LogService"
 pushd ${MASTER_ROOT_DIR}/monitor/wpm
-  bash ./run_log_service.sh 2>&1 > ./log/log_service.out &
+  bash ./log_service.sh start
 popd
 
 sleep 5
