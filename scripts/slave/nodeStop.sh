@@ -30,7 +30,7 @@ RADARGUN_SLAVE_PID=`ps -ef | grep "org.radargun.Slave" | grep -v "grep" | awk '{
 
 echo "--- Stopping Producer && Consumer ---"
 pushd ${WPM_DIR}
-  ./run_cons_prod.sh start
+  ./run_cons_prod.sh stop
 popd
 
 
