@@ -51,11 +51,11 @@
 
         <SyntheticBenchmark
                 id="h"
-                simulationTimeSec="18000"
+                simulationTimeSec="350"
                 sizeOfAnAttribute="1000"
                 keyGeneratorClass="org.radargun.stages.stressors.ContentionStringKeyGenerator"
                 numberOfAttributes="100000"
-                numOfThreads="2"
+                numOfThreads="1"
                 updateXactWrites="10"
                 updateXactReads="10"
                 readOnlyXactSize="10"
