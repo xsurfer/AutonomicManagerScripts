@@ -1,0 +1,4 @@
+#!/bin/bash
+CREDENTIALS=~/alg.sh
+source ${CREDENTIALS}
+nova list | grep geo | awk '{ print $8; }' | cut -d"=" -${CREDENTIALS}
