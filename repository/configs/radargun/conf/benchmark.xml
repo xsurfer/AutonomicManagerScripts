@@ -8,8 +8,8 @@
          skippable stages and executing the other ones.
          If dynamic is false, it'll ignore slaves trying to join at runtime -->
     <benchmark
-            initSize="2"
-            maxSize="2"
+            initSize="5"
+            maxSize="5"
             increment="1">
 
         <!--runOnAllSlaves="true"-->
@@ -51,11 +51,11 @@
 
         <SyntheticBenchmark
                 id="h"
-                simulationTimeSec="350"
+                simulationTimeSec="6000"
                 sizeOfAnAttribute="1000"
                 keyGeneratorClass="org.radargun.stages.stressors.ContentionStringKeyGenerator"
                 numberOfAttributes="100000"
-                numOfThreads="1"
+                numOfThreads="2"
                 updateXactWrites="10"
                 updateXactReads="10"
                 readOnlyXactSize="10"
@@ -104,7 +104,7 @@
 
     <products>
         <infinispan4>
-            <config name="cloudtmRR.xml"/>
+            <config name="cloudtmGMU.xml"/>
         </infinispan4>
     </products>
     <reports>
