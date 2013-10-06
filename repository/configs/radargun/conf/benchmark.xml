@@ -8,8 +8,8 @@
          skippable stages and executing the other ones.
          If dynamic is false, it'll ignore slaves trying to join at runtime -->
     <benchmark
-            initSize="5"
-            maxSize="5"
+            initSize="10"
+            maxSize="10"
             increment="1">
 
         <!--runOnAllSlaves="true"-->
@@ -33,7 +33,7 @@
                 keyGeneratorClass="org.radargun.stages.stressors.ContentionStringKeyGenerator"
                 numberOfAttributes="100000"
                 sizeOfAnAttribute="1000"
-                numOfThreads="2"
+                numOfThreads="1"
                 transactionSize="100"
                 skippable="true"/>
 
@@ -55,10 +55,10 @@
                 sizeOfAnAttribute="1000"
                 keyGeneratorClass="org.radargun.stages.stressors.ContentionStringKeyGenerator"
                 numberOfAttributes="100000"
-                numOfThreads="2"
+                numOfThreads="1"
                 updateXactWrites="10"
                 updateXactReads="10"
-                readOnlyXactSize="10"
+                readOnlyXactSize="1000"
                 writePercentage="10"
                 allowBlindWrites="false"
                 retryOnAbort="RETRY_SAME_CLASS"

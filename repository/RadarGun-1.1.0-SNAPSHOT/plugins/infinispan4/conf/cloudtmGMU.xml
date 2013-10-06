@@ -46,7 +46,7 @@
             <sync
                     replTimeout="15000" />
             <hash
-                    numOwners="3"/>
+                    numOwners="20"/>
             <l1
                     enabled="false"
                     onRehash="false"
@@ -95,7 +95,7 @@
             <sync
                     replTimeout="15000" />
             <hash
-                    numOwners="3"/>
+                    numOwners="20"/>
             <l1
                     enabled="false"
                     onRehash="false"
