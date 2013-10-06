@@ -1,10 +1,6 @@
-MASTER:vm-148-104.uc.futuregrid.org
+MASTER:vm-148-125.uc.futuregrid.org
 
-SLAVE:vm-148-121.uc.futuregrid.org
-SLAVE:vm-148-122.uc.futuregrid.org
-SLAVE:vm-148-123.uc.futuregrid.org
-SLAVE:vm-148-124.uc.futuregrid.org
-SLAVE:vm-148-125.uc.futuregrid.org
+
 SLAVE:vm-148-140.uc.futuregrid.org
 SLAVE:vm-148-144.uc.futuregrid.org
 SLAVE:vm-148-145.uc.futuregrid.org
@@ -13,10 +9,15 @@ SLAVE:vm-148-147.uc.futuregrid.org
 SLAVE:vm-148-148.uc.futuregrid.org
 SLAVE:vm-148-149.uc.futuregrid.org
 SLAVE:vm-148-150.uc.futuregrid.org
-SLAVE:vm-148-153.uc.futuregrid.org
 SLAVE:vm-148-241.uc.futuregrid.org
+SLAVE:vm-148-153.uc.futuregrid.org
 SLAVE:vm-148-242.uc.futuregrid.org
 SLAVE:vm-148-243.uc.futuregrid.org
 SLAVE:vm-148-244.uc.futuregrid.org
 SLAVE:vm-148-245.uc.futuregrid.org
 SLAVE:vm-148-246.uc.futuregrid.org
+SLAVE:vm-148-247.uc.futuregrid.org
+SLAVE:vm-149-1.uc.futuregrid.org
+SLAVE:vm-149-10.uc.futuregrid.org
+SLAVE:vm-149-100.uc.futuregrid.org
+SLAVE:vm-149-102.uc.futuregrid.org
