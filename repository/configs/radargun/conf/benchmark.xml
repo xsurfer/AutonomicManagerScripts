@@ -8,8 +8,8 @@
          skippable stages and executing the other ones.
          If dynamic is false, it'll ignore slaves trying to join at runtime -->
     <benchmark
-            initSize="10"
-            maxSize="10"
+            initSize="1"
+            maxSize="1"
             increment="1">
 
         <!--runOnAllSlaves="true"-->
@@ -22,11 +22,24 @@
                 delayAfterFirstSlaveStarts="5000"
                 delayBetweenStartingSlaves="1000"
                 skippable="false"/>
-        <!-- <ClusterValidation
+        <!--ClusterValidation
                 id="c"
                 passiveReplication="false"
                 partialReplication="false"
                 skippable="true"/ -->
+
+	<!--TpccPopulation
+                id="d"
+                preloadedFromDB="false"
+                numWarehouses="3"
+                cLastMask="0"
+                olIdMask="0"
+                cIdMask="0"
+                threadParallelLoad="true"
+                batchLevel="200"
+                numLoaderThreads="1"
+                oneWarmup="true"
+                skippable="true"/-->
 
         <SyntheticWarmup
                 id="d"
@@ -49,6 +62,20 @@
                 statName="CACHE_SIZE_BEFORE_BENCH"
                 skippable="true"/>
 
+	<!--TpccBenchmark
+                id="h"
+                statsSamplingInterval="30000"
+                numOfThreads="1"
+                simulationTimeSec="6000"
+                accessSameWarehouse="false"
+                paymentWeight="4"
+                orderStatusWeight="92"
+                retryOnAbort="RETRY_SAME_CLASS"
+                backOffTime="0"
+                perThreadTrackNewKeys="true"
+                skippable="true"
+                scalable="true"-->
+
         <SyntheticBenchmark
                 id="h"
                 simulationTimeSec="6000"
@@ -67,14 +94,14 @@
                 skippable="true"
                 scalable="true">
 
-            <!--OpenSystem>
+            <OpenSystem>
               <Ramp
                 rateDistribution="exponential"
-                granularity="5000"
-                initTime="0"
-                slope="1"
+                granularity="60000"
+                initTime="1"
+                slope="0.83"
                 yintercept="0"
-                maxArrivalRate="100" /-->
+                maxArrivalRate="10000" />
 
             <!--Trace
                     rateDistribution="exponential"
@@ -88,14 +115,15 @@
                     initTime="0"
                     amplitude="1000"
                     maxArrivalRate="3000" /-->
-            <!--/OpenSystem-->
+            </OpenSystem>
 
 
             <!--ClosedSystem thinkTime="2000" population="10" rateDistribution="exponential" /-->
 
-            <MuleSystem thinkTime="0" rateDistribution="exponential" />
+            <!--MuleSystem thinkTime="0" rateDistribution="exponential" /-->
 
-
+	
+	<!--/TpccBenchmark-->
         </SyntheticBenchmark>
 
 
