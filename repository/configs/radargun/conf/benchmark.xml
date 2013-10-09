@@ -98,7 +98,7 @@
               <Ramp
                 rateDistribution="exponential"
                 granularity="1200000"
-                initTime="1200"
+                initTime="2400"
                 slope="0.1875"
                 yintercept="100"
                 maxArrivalRate="1000" />
