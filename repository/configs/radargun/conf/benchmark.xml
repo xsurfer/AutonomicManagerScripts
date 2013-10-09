@@ -8,8 +8,8 @@
          skippable stages and executing the other ones.
          If dynamic is false, it'll ignore slaves trying to join at runtime -->
     <benchmark
-            initSize="1"
-            maxSize="1"
+            initSize="2"
+            maxSize="2"
             increment="1">
 
         <!--runOnAllSlaves="true"-->
@@ -86,7 +86,7 @@
                 updateXactWrites="10"
                 updateXactReads="10"
                 readOnlyXactSize="1000"
-                writePercentage="10"
+                writePercentage="1"
                 allowBlindWrites="false"
                 retryOnAbort="RETRY_SAME_CLASS"
                 statsSamplingInterval="15000"
@@ -97,10 +97,10 @@
             <OpenSystem>
               <Ramp
                 rateDistribution="exponential"
-                granularity="60000"
-                initTime="1"
-                slope="0.83"
-                yintercept="0"
+                granularity="180000"
+                initTime="180"
+                slope="1.25"
+                yintercept="100"
                 maxArrivalRate="10000" />
 
             <!--Trace
