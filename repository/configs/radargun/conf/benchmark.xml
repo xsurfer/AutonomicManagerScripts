@@ -82,11 +82,11 @@
                 sizeOfAnAttribute="1000"
                 keyGeneratorClass="org.radargun.stages.stressors.ContentionStringKeyGenerator"
                 numberOfAttributes="100000"
-                numOfThreads="1"
-                updateXactWrites="10"
-                updateXactReads="10"
-                readOnlyXactSize="1000"
-                writePercentage="1"
+                numOfThreads="4"
+                updateXactWrites="2"
+                updateXactReads="5"
+                readOnlyXactSize="500"
+                writePercentage="50"
                 allowBlindWrites="false"
                 retryOnAbort="RETRY_SAME_CLASS"
                 statsSamplingInterval="15000"
@@ -94,14 +94,14 @@
                 skippable="true"
                 scalable="true">
 
-            <OpenSystem>
-              <Ramp
+            <!--OpenSystem-->
+              <!--Ramp
                 rateDistribution="exponential"
                 granularity="1200000"
-                initTime="2400"
+                initTime="4800"
                 slope="0.1875"
                 yintercept="100"
-                maxArrivalRate="1000" />
+                maxArrivalRate="1000" /-->
 
             <!--Trace
                     rateDistribution="exponential"
@@ -115,12 +115,12 @@
                     initTime="0"
                     amplitude="1000"
                     maxArrivalRate="3000" /-->
-            </OpenSystem>
+            <!--/OpenSystem-->
 
 
             <!--ClosedSystem thinkTime="2000" population="10" rateDistribution="exponential" /-->
 
-            <!--MuleSystem thinkTime="0" rateDistribution="exponential" /-->
+            <MuleSystem thinkTime="0" rateDistribution="exponential" />
 
 	
 	<!--/TpccBenchmark-->
