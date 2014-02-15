@@ -1,0 +1,6 @@
+# add a line for the master node
+MASTER:<master_ip>
+
+# for each slave add a line like the following
+SLAVE:<slave_1_ip>
+

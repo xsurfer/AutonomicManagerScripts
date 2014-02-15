@@ -5,7 +5,7 @@ set -e
 ROOT=$(dirname ${0})
 
 # user to use during ssh connections
-export USER=ubuntu
+export USER=root
 
 # MASTER node will execute RADARGUN MASTER + AUTONOMIC MANAGER + LOG_SERVICE + GOSSIP ROUTER
 # slave node will contact master node to download tar.gz file
